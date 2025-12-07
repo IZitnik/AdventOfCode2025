@@ -13,6 +13,7 @@ main = do
   args <- getArgs
   case args of
     [fname] -> readFile fname >>= print . solve
+    _       -> print "Invalid number of arguments!"
 
 solve :: String -> SplitCnt
 solve = fst . emulate . parseData
